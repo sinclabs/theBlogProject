@@ -1,0 +1,17 @@
+<div class="left-side-bar">
+  <div class="recent-posts">
+    <h3>Popular Posts</h3>
+    <ul>
+      <% for(var i=0; i<JSON.parse(posts).Posts.length; i++){ %>
+          <li><a href="\Posts\<%= i %>"><%= JSON.parse(posts).Posts[i].PostName %></a></li>
+      <% } %>
+    </ul>
+    <h3>Recent Projects</h3>
+    <ul>
+      <li><a href="#">This is a Project</a></li>
+      <li><a href="#">The king of all Projects</a></li>
+      <li><a href="#">This project is freaking awesome</a></li>
+      <li><a href="#">Beware of this Project</a></li>
+    </ul>
+  </div>
+</div>
