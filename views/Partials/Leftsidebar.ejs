@@ -2,8 +2,8 @@
   <div class="recent-posts">
     <h3>Popular Posts</h3>
     <ul>
-      <% for(var i=0; i<JSON.parse(posts).Posts.length; i++){ %>
-          <li><a href="\Posts\<%= i %>"><%= JSON.parse(posts).Posts[i].PostName %></a></li>
+      <% for(var i=0; i<JSON.parse(posts).length; i++){ %>
+          <li><a href="\Posts?name=<%- JSON.parse(posts)[i].PostName %>"><%- JSON.parse(posts)[i].PostName %></a></li>
       <% } %>
     </ul>
     <h3>Recent Projects</h3>

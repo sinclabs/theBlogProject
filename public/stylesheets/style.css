@@ -72,6 +72,14 @@ a.tag{
    -moz-transition: border .2s ease-in-out;
 }
 
+.tag-details{
+  text-align: center;
+}
+
+.tag-details>span{
+  font-weight: bold;
+}
+
 a.tag:hover{
   border-bottom: 1px solid #aaa;
 }
@@ -323,6 +331,18 @@ a.read-more:hover{
 .menu-bar ul li{
   display:inline-block;
   padding:10px 5px 10px 5px;
+  border:none;
+  transition: border .2s ease-in-out;
+}
+
+.footer>.text-bar>p>a{
+  color:#373737;
+  text-decoration: none;
+  border-bottom: 1px dotted #373737;
+}
+
+.footer>.text-bar>p>a:hover{
+  border-bottom: 1px solid #373737;
 }
 
 .menu-bar ul li a{

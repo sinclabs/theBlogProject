@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>subbu</title>
     <% include Partials/Stylesheets %>
   </head>
   <body>
@@ -13,16 +13,25 @@
       <div class="center-bar">
         <% include Partials/Header %>
         <div class="post-scroll">
-          <% for(var i=0; i<JSON.parse(posts).Posts.length; i++){ %>
+          <% if(Page === "tags") { %>
+            <p class="tag-details">Posts with the tag: <span><%= Tag %></span></p>
+          <% } %>
+          <% for(var i=0; i<JSON.parse(posts).length; i++){ %>
           <div class="post-card">
-            <a href="\Posts\<%= i %>" class="post-header"><%= JSON.parse(posts).Posts[i].PostName %></a>
-            <a href="\authors\<%= JSON.parse(posts).Posts[i].Author %>" class="author"><%= JSON.parse(posts).Posts[i].Author %></a> <a href="\Date\<%= JSON.parse(posts).Posts[i].DateTime %>" class="time"><%= JSON.parse(posts).Posts[i].DateTime %></a>
-            <p class="post-content"><%- JSON.parse(posts).Posts[i].PostPreview %>... <a href="\Posts\<%= i %>" class="read-more">Read More</a></p>
+            <a href="\Posts?name=<%- JSON.parse(posts)[i].PostName %>" class="post-header"><%= JSON.parse(posts)[i].PostName %></a>
+            <a href="\authors?name=<%- JSON.parse(posts)[i].Author %>" class="author"><%= JSON.parse(posts)[i].Author %></a>
+            <a href="\Date?date=<%- JSON.parse(posts)[i].DateTime.split(',')[0] %>" class="time"><%= JSON.parse(posts)[i].DateTime %></a>
+            <% if(Page === "index" || Page === "tags") { %>
+              <p class="post-content"><%= JSON.parse(posts)[i].PostPreview %>... <a href="\Posts?name=<%- JSON.parse(posts)[i].PostName %>" class="read-more">Read More</a></p>
+            <% } %>
+            <% if(Page === "posts") { %>
+              <p class="post-content"><%- JSON.parse(posts)[i].PostContent %></p>
+            <% } %>
             <div class="tags">
               <p>
                 <b>Tags:</b>
-                <% for(var j=0; j<JSON.parse(posts).Posts[i].Tags.length; j++){ %>
-                  <a href="\tags\<%= JSON.parse(posts).Posts[i].Tags[j] %>" class="tag"><%= JSON.parse(posts).Posts[i].Tags[j] %></a>
+                <% for(var j=0; j<JSON.parse(posts)[i].Tags.length; j++){ %>
+                  <a href="\tags?name=<%- JSON.parse(posts)[i].Tags[j] %>" class="tag"><%- JSON.parse(posts)[i].Tags[j] %></a>
                 <% } %>
               </p>
             </div>

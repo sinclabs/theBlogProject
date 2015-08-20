@@ -1,0 +1,16 @@
+<% for(var i=0; i<JSON.parse(posts).length; i++){ %>
+<div class="post-card">
+  <a href="\Posts?name=<%- JSON.parse(posts)[i].PostName %>" class="post-header"><%- JSON.parse(posts)[i].PostName %></a>
+  <a href="\authors?name=<%- JSON.parse(posts)[i].Author %>" class="author"><%- JSON.parse(posts)[i].Author %></a>
+  <a href="\Date?date=<%- JSON.parse(posts)[i].DateTime.split(',')[0] %>" class="time"><%- JSON.parse(posts)[i].DateTime %></a>
+  <p class="post-content"><%- JSON.parse(posts).Posts[i].PostPreview %>... </p>
+  <div class="tags">
+    <p>
+      <b>Tags:</b>
+      <% for(var j=0; j<JSON.parse(posts)[i].Tags.length; j++){ %>
+        <a href="\tags?name=<%- JSON.parse(posts)[i].Tags[j] %>" class="tag"><%- JSON.parse(posts)[i].Tags[j] %></a>
+      <% } %>
+    </p>
+  </div>
+</div>
+<% } %>
