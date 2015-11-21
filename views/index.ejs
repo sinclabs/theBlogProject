@@ -16,12 +16,16 @@
           <% if(Page === "tags") { %>
             <p class="tag-details">Posts with the tag: <span><%= Tag %></span></p>
           <% } %>
+          <% if(Page === "authors") { %>
+            <p class="tag-details">Posts by the author: <span><%= Author %></span></p>
+          <% } %>
+          
           <% for(var i=0; i<JSON.parse(posts).length; i++){ %>
           <div class="post-card">
             <a href="\Posts?name=<%- JSON.parse(posts)[i].PostName %>" class="post-header"><%= JSON.parse(posts)[i].PostName %></a>
             <a href="\authors?name=<%- JSON.parse(posts)[i].Author %>" class="author"><%= JSON.parse(posts)[i].Author %></a>
             <a href="\Date?date=<%- JSON.parse(posts)[i].DateTime.split(',')[0] %>" class="time"><%= JSON.parse(posts)[i].DateTime %></a>
-            <% if(Page === "index" || Page === "tags") { %>
+            <% if(Page === "index" || Page === "tags" || Page === "authors") { %>
               <p class="post-content"><%- JSON.parse(posts)[i].PostPreview %>... <a href="\Posts?name=<%- JSON.parse(posts)[i].PostName %>" class="read-more">Read More</a></p>
             <% } %>
             <% if(Page === "posts") { %>
