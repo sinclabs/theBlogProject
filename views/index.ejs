@@ -39,6 +39,13 @@
                 <% } %>
               </p>
             </div>
+            <% if(Page === "posts") { %>
+            <div class="comments">
+              <input type="textarea" placeholder="Your name" name="comment" required="false">
+              <label class="commentlabel">Input your thoughts!</label><br>
+              <textarea rows="4" cols="50" class="commentbox"></textarea>
+            </div>
+            <% } %>
           </div>
           <% } %>
         </div>

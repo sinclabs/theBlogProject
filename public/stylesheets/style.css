@@ -375,6 +375,19 @@ a.read-more:hover{
   float:right;
   padding-right:10px;
 }
+
+.comments{
+  margin-top:30px;
+}
+
+.commentbox{
+  margin-top:10px;
+}
+
+.commentlabel{
+  margin-top:20px;
+  color:#aaa;
+}
 /*------------------- Media Specific Quries ------------------------------------*/
 
 /* Custom, iPhone Retina */

@@ -9,7 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/authors');
 var posts = require('./routes/posts');
 var tags = require('./routes/tags');
-var gesture = require('./routes/gesture');
+
 
 var app = express();
 
@@ -29,7 +29,7 @@ app.use('/', routes);
 app.use('/authors', users);
 app.use('/Posts', posts);
 app.use('/Tags', tags);
-app.use('/gesture', gesture);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
