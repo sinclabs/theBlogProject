@@ -83,6 +83,9 @@ a.tag{
 a.tag:hover{
   border-bottom: 1px solid #aaa;
 }
+.social-bar{
+  display:block !important;
+}
 .social-bar>a{
   color:#333;
 }
@@ -332,7 +335,7 @@ a.read-more:hover{
   display:inline-block;
   padding:10px 5px 10px 5px;
   border:none;
-  transition: border .2s ease-in-out;
+  transition: border .02s ease-in-out;
 }
 
 .footer>.text-bar>p>a{

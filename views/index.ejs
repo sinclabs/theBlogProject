@@ -19,7 +19,6 @@
           <% if(Page === "authors") { %>
             <p class="tag-details">Posts by the author: <span><%= Author %></span></p>
           <% } %>
-          
           <% for(var i=0; i<JSON.parse(posts).length; i++){ %>
           <div class="post-card">
             <a href="\Posts?name=<%- JSON.parse(posts)[i].PostName %>" class="post-header"><%= JSON.parse(posts)[i].PostName %></a>
